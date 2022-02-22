@@ -27,8 +27,9 @@ class Profile extends StatelessWidget {
                 "Title",
                 style: TextStyle(
                     fontSize: 10,
-                    fontStyle:
-                    FontStyle.italic)
+                    fontStyle: FontStyle.italic,
+                    color: Colors.teal
+                )
             ),
           ],
         ));
