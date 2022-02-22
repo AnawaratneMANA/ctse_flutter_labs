@@ -49,16 +49,21 @@ class Profile extends StatelessWidget {
                     color: Colors.teal,
                   )),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: const <Widget>[
                   Icon(
-                    Icons.favorite,
-                    color: Colors.pink,
+                    Icons.facebook_sharp,
+                    color: Colors.blue,
                     size: 24.0,
                     semanticLabel: 'Text to announce in accessibility modes',
                   ),
+
+                  SizedBox(width: 8),
+
                   Icon(
-                    Icons.audiotrack,
-                    color: Colors.green,
+                    Icons.mail,
+                    color: Colors.orange,
                     size: 30.0,
                   ),
                 ],
