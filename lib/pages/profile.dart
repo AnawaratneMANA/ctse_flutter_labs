@@ -6,7 +6,18 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("My App"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
 
+          Text("Nirmith Akash"),
+          Text("Title", style: TextStyle(fontSize: 10, fontStyle: FontStyle.italic)),
+        ],
+      )
     );
   }
 }
