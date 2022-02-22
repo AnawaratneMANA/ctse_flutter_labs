@@ -7,34 +7,46 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("My App"),
+          title:  Center(child: const Text("My App")),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
 
             // To center we have to add SizeBox, Infinity.
             SizedBox(
               width: double.infinity,
             ),
 
+            // Adding Image.
+            Image.asset(
+              "assets/images/profile.png",
+              width: 150,
+              height: 150,
+              fit: BoxFit.cover,
+            ),
+
+            // Spacing between Image and and Text.
+            SizedBox(height: 8),
+
             // Normal Text.
             Text("Nirmith Akash",
               style: TextStyle(
-                fontWeight: FontWeight.bold
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               )
             ),
 
             // SizeBox to add space between elements.
-            SizedBox(height: 8,),
+            SizedBox(height: 8),
             // Styled Text.
             Text(
                 "Title",
                 style: TextStyle(
-                    fontSize: 10,
+                    fontSize: 15,
                     fontStyle: FontStyle.italic,
-                    color: Colors.teal
+                    color: Colors.teal,
                 )
             ),
           ],
