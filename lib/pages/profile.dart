@@ -45,7 +45,9 @@ class Profile extends StatelessWidget {
               SizedBox(height: 8),
               // Styled Text.
               Text("Title",
-                  style: GoogleFonts.iceberg(),
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(color: Colors.blue, letterSpacing: 1),
+                  ) ,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
