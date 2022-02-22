@@ -20,8 +20,14 @@ class Profile extends StatelessWidget {
             ),
 
             // Normal Text.
-            Text("Nirmith Akash"),
+            Text("Nirmith Akash",
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              )
+            ),
 
+            // SizeBox to add space between elements.
+            SizedBox(height: 8,),
             // Styled Text.
             Text(
                 "Title",
