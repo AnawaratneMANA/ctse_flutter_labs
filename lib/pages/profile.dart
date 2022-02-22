@@ -20,7 +20,7 @@ class Profile extends StatelessWidget {
 
               // Adding Image.
               ClipRRect(
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(80),
                 child: Image.asset(
                   "assets/images/profile.png",
                   width: 150,
@@ -37,6 +37,7 @@ class Profile extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
+                    fontFamily: "DancingScript"
                   )),
 
               // SizeBox to add space between elements.
