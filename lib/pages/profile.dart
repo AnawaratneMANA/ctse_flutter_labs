@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -44,11 +45,8 @@ class Profile extends StatelessWidget {
               SizedBox(height: 8),
               // Styled Text.
               Text("Title",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontStyle: FontStyle.italic,
-                    color: Colors.teal,
-                  )),
+                  style: GoogleFonts.iceberg(),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
