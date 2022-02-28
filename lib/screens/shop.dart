@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../data.dart';
 import '../providers/cart_provider.dart';
 
@@ -23,6 +22,9 @@ class Shop extends StatelessWidget {
           return ListTile(
             title: Text(items.elementAt(index).name),
             subtitle: Text(items.elementAt(index).price.toString()),
+            trailing: IconButton(icon: const Icon(Icons.delete), onPressed: (){ // Adding a delete button.
+
+            }),
           );
         }),
     );
