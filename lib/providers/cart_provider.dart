@@ -21,6 +21,9 @@ class CartProvider extends ChangeNotifier {
 
   // Getters and Setters
   Set<Item> get items => _items;
+  double get total => _items.fold(
+      0.0, (previousValue, item)=> previousValue + item.price
+  );
 
   bool isItemAdded(Item item){
     return _items.contains(item);
@@ -39,7 +42,7 @@ class CartProvider extends ChangeNotifier {
    }
   }
 
-  // Total calculation method. (Fold the list or use a Loop).
+  // Total calculation method. (Loop Version).
   double calculateTotal(){
     return 0.0;
   }
