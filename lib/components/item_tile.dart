@@ -14,6 +14,11 @@ class ItemTile extends StatelessWidget {
           Image.network(item.image),
           Text(item.name, style: Theme.of(context).textTheme.headline6),
           Text('${item.price}', style: Theme.of(context).textTheme.caption),
+          IconButton(
+              onPressed: (){},
+              icon: const Icon(
+            Icons.add_shopping_cart,
+          ))
         ],
       ),
     );
