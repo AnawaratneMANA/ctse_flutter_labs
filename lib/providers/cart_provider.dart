@@ -13,7 +13,10 @@ class CartProvider extends ChangeNotifier {
   ///  (Concern about avoiding duplicate values)
   /// **/
 
-  Set<Item> _items = {};
+  final Set<Item> _items = {};
+
+  // Getters and Setters
+  Set<Item> get items => _items;
 
   bool isItemAdded(Item item){
     return _items.contains(item);
@@ -26,6 +29,14 @@ class CartProvider extends ChangeNotifier {
   }
 
   void removeItem(Item item){
-    _items.remove(item);
+   if(_items.contains(item)){
+     _items.remove(item);
+     notifyListeners();
+   }
+  }
+
+  // Total calculation method.
+  double calculateTotal(){
+    return 0.0;
   }
 }
