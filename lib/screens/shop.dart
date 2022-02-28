@@ -16,22 +16,34 @@ class Shop extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Cart"),
       ),
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index){
-          return ListTile(
-            title: Text(items.elementAt(index).name),
-            subtitle: Text(items.elementAt(index).price.toString()),
-            trailing: IconButton(
-                icon: const Icon(Icons.delete),
-                onPressed: (){ // Adding a delete button.
-                  Provider.of<CartProvider>(
-                    context,
-                    listen: false,
-                  ).removeItem(items.elementAt(index));
-            },),
-          );
-        }),
+      body: Column(
+        children: [
+          Flexible(
+            flex: 9,
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index){
+                return ListTile(
+                  title: Text(items.elementAt(index).name),
+                  subtitle: Text(items.elementAt(index).price.toString()),
+                  trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: (){ // Adding a delete button.
+                        Provider.of<CartProvider>(
+                          context,
+                          listen: false,
+                        ).removeItem(items.elementAt(index));
+                  },),
+                );
+              }),
+          ),
+          Flexible(
+            flex: 1,
+            child: Text(Provider.of<CartProvider>(context).total.toString(),
+                style: Theme.of(context).textTheme.headline5),
+          ),
+        ],
+      ),
     );
   }
 }
