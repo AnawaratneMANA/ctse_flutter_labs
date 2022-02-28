@@ -24,7 +24,7 @@ class Shop extends StatelessWidget {
               itemCount: items.length,
               itemBuilder: (context, index){
                 return Dismissible(
-                  key: Key(items.elementAt(index).toString()),
+                  key: Key(items.elementAt(index).name),
                   child: Card(
                     elevation: 5,
                     child: ListTile(
