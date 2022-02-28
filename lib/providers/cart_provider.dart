@@ -6,12 +6,13 @@ class CartProvider extends ChangeNotifier {
 
   ///  Using this component we are removing the common data,
   ///  and push them outside the widget tree.
-  ///
-  ///  Even the calculation can be take place here, rather than having them in the UI.
-  ///
+
+  ///  Even the calculation can be take place here,
+  ///  rather than having them in the UI.
+
   ///  To keep the item either a list or a set should be created.
   ///  (Concern about avoiding duplicate values)
-  /// **/
+
 
   final Set<Item> _items = {};
 
