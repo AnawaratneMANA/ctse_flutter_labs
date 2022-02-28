@@ -22,14 +22,17 @@ class Home extends StatelessWidget {
           ))
         ]
       ),
-      body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemCount: storeItems.length,
-          itemBuilder: (context, index){
-            return ItemTile(
-              item: storeItems.elementAt(index),
-            );
-          }
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            itemCount: storeItems.length,
+            itemBuilder: (context, index){
+              return ItemTile(
+                item: storeItems.elementAt(index),
+              );
+            }
+        ),
       ),
     );
   }
