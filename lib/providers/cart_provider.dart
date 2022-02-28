@@ -33,6 +33,7 @@ class CartProvider extends ChangeNotifier {
 
   void addItem(Item item){
     _items.add(item);
+    notifyListeners();
   }
 
   void removeItem(Item item){

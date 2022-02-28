@@ -22,9 +22,14 @@ class Shop extends StatelessWidget {
           return ListTile(
             title: Text(items.elementAt(index).name),
             subtitle: Text(items.elementAt(index).price.toString()),
-            trailing: IconButton(icon: const Icon(Icons.delete), onPressed: (){ // Adding a delete button.
-
-            }),
+            trailing: IconButton(
+                icon: const Icon(Icons.delete),
+                onPressed: (){ // Adding a delete button.
+                  Provider.of<CartProvider>(
+                    context,
+                    listen: false,
+                  ).removeItem(items.elementAt(index));
+            },),
           );
         }),
     );
