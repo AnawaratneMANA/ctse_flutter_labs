@@ -13,6 +13,9 @@ class CartProvider extends ChangeNotifier {
   ///  To keep the item either a list or a set should be created.
   ///  (Concern about avoiding duplicate values)
 
+  ///  A higher order function can be used to iterate through the list.
+  ///  rather than using a loop.
+
 
   final Set<Item> _items = {};
 
@@ -36,7 +39,7 @@ class CartProvider extends ChangeNotifier {
    }
   }
 
-  // Total calculation method.
+  // Total calculation method. (Fold the list or use a Loop).
   double calculateTotal(){
     return 0.0;
   }
