@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../data.dart';
+import '../providers/cart_provider.dart';
 
 class ItemTile extends StatelessWidget {
   final Item item;
@@ -16,7 +18,9 @@ class ItemTile extends StatelessWidget {
           Text(item.name, style: Theme.of(context).textTheme.headline6),
           Text('${item.price}', style: Theme.of(context).textTheme.caption),
           IconButton(
-              onPressed: (){},
+              onPressed: (){
+                Provider.of<CartProvider>(context, listen: false).addItem(item); // Warning listen: false, to avoid recursions.
+              },
               icon: const Icon(
             Icons.add_shopping_cart,
           ))

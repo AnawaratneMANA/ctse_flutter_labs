@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../data.dart';
+import '../providers/cart_provider.dart';
 
 class Shop extends StatelessWidget {
   static const String routeName = "/shop";
@@ -6,10 +10,21 @@ class Shop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Set<Item> items = Provider.of<CartProvider>(context).items;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cart"),
-      )
+      ),
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index){
+          return ListTile(
+            title: Text(items.elementAt(index).name),
+            subtitle: Text(items.elementAt(index).price.toString()),
+          );
+        }),
     );
   }
 }
