@@ -11,7 +11,7 @@ class ItemTile extends StatelessWidget {
     return Card(
       child: Column(
         children: [
-          Image.network(item.image),
+          Expanded(child: Image.network(item.image)),
           Text(item.name, style: Theme.of(context).textTheme.headline6),
           Text('${item.price}', style: Theme.of(context).textTheme.caption),
           IconButton(
