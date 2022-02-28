@@ -10,6 +10,9 @@ class ItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    bool canAddToCart = !Provider.of<CartProvider>(context).isItemAdded(item);
+
     return Card(
       elevation: 5,
       child: Column(
@@ -18,9 +21,9 @@ class ItemTile extends StatelessWidget {
           Text(item.name, style: Theme.of(context).textTheme.headline6),
           Text('${item.price}', style: Theme.of(context).textTheme.caption),
           IconButton(
-              onPressed: (){
+              onPressed: canAddToCart ? (){
                 Provider.of<CartProvider>(context, listen: false).addItem(item); // Warning listen: false, to avoid recursions.
-              },
+              } : null,
               icon: const Icon(
             Icons.add_shopping_cart,
           ))
