@@ -19,7 +19,7 @@ class Home extends StatefulWidget {
 // State class.
 class _HomeState extends State<Home> {
   final _formKey = GlobalKey<FormState>();
-  String? _name;
+  String? _name = "Default";
   int? _age;
 
   void onSubmit() async {
@@ -41,6 +41,7 @@ class _HomeState extends State<Home> {
       body: Column(
         children: [
           Form(
+            key: _formKey,
             child: Column(
               children: [
                 Padding(
@@ -59,7 +60,7 @@ class _HomeState extends State<Home> {
                     },
                     onSaved: (String? value) {
                       setState(() {
-                        if (value == null) _name = value;
+                        if (value != null) _name = value;
                       });
                     },
                   ),
